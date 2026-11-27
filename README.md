@@ -12,6 +12,15 @@ Standard PDF parsers such as pdfplumber and PyPDF2 fail silently on scanned or r
 
 To learn and demonstrate about parsing a PDF document which has tables as images, and retrieve the content which can be useful to answer domain specific queries for multi-page document.
 
+**High-level details for parsing the PDF file**
+1. Loading the PDF document and fetching its total number of pages.
+2. For each page: -
+   - We create an in-memory byte stream (virtual file). This is like an in-memory buffer. It is useful to avoid writing temporary .png files to disk for every page and cleaning them up later.
+   - Then we convert pixel data into compressed PNG bytes in the virtual file.
+   - Using the compressed PNG bytes, we convert them to raw bytes using base64 and then translate them into corresponding string values.
+   - The string values are passed to LLM to convert them into readable format which can be use later for Q&A
+   - The results for each page are stored in a TEXT file: tariff_summary.txt along with the corresponding page numbers.
+
 **Reference material**
 
 * Approach for parsing the document: https://www.elastic.co/search-labs/blog/alternative-approach-for-parsing-pdfs-in-rag
