@@ -1,4 +1,18 @@
 # Using-RAG-for-Planning-stay-in-Rajasthan
 
-Reference material: -
-https://www.elastic.co/search-labs/blog/alternative-approach-for-parsing-pdfs-in-rag
+**Project overview**
+
+Here we build a proof of concept that ingests scanned, image-only PDF document consisting of tariffs of hotels across different cities in Rajasthan, extracts structured tables and text via vision/OCR and answer natural-language queries with page-level citations using Retrieval Augmented Generation (RAG).
+
+**Problem statement**
+
+Standard PDF parsers such as pdfplumber and PyPDF2 fail silently on scanned or rasterized regulatory documents. It means they do not return any error but nor give any results after parsing the document, thus, returning empty strings. 
+
+**Motivation to solve the problem**
+
+To learn and demonstrate about parsing a PDF document which has tables as images, and retrieve the content which can be useful to answer domain specific queries for multi-page document.
+
+**Reference material**
+
+* Approach for parsing the document: https://www.elastic.co/search-labs/blog/alternative-approach-for-parsing-pdfs-in-rag
+* Source data: https://www.rtdc.tourism.rajasthan.gov.in/Pdf/Tariff.pdf
