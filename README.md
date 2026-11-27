@@ -1,4 +1,4 @@
-# Using-RAG-for-Planning-stay-in-Rajasthan
+# Using-RAG-for-planning-stay-in-Rajasthan
 
 **Project overview**
 
